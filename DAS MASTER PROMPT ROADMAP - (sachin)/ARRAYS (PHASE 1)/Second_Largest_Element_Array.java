@@ -15,7 +15,7 @@ public class Second_Largest_Element_Array {
         }
 
         System.out.println();
-
+        
         System.out.print("Array : ");
 
         for (int i = 0; i < arr.length; i++) {
@@ -31,6 +31,7 @@ public class Second_Largest_Element_Array {
             if (arr[i] > max) {
                 sec_max = max;
                 max = arr[i];
+                isFound = true;
             } else if (arr[i] > sec_max && arr[i] != max) {
                 sec_max = arr[i];
                 isFound = true;
@@ -41,7 +42,7 @@ public class Second_Largest_Element_Array {
 
         if (!isFound) {
             System.out.println("Second Largest Element Not Found");
-        } else if(isFound = true) {
+        } else if(isFound == true) {
             System.out.println("Second Largest = " + sec_max);
         }
 

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Right_Rotate_Array_By_One {
+public class Move_Zeroes_To_End_Array {
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
@@ -19,27 +19,37 @@ public class Right_Rotate_Array_By_One {
         
         System.out.println();
 
-        System.out.print("Before Array : ");
+        System.out.print("Array before : ");
 
         for(int i=0;i<arr.length;i++){
             System.out.print(arr[i]+" ");
         }
 
+        int a = 0;
+        int j = 0;
+
+
+        
+        while(a<arr.length){
+            if(arr[a]!=0){
+                int t = arr[a];
+                arr[a] = arr[j];
+                arr[j] = t;
+                a++;
+                j++;
+            }else{
+                a++;
+            }
+        }
+
         System.out.println();
-        System.out.println();
-
-       int temp = arr[arr.length-1];
-
-       for(int i=arr.length-1;i>0;i--){
-        arr[i] = arr[i-1];
-       }
-       arr[0] = temp;
-
-    System.out.print("After One Right Rotate : ");
-    
-      for(int i=0;i<arr.length;i++){
+        
+        System.out.print("Array After : ");
+        for(int i=0;i<arr.length;i++){
             System.out.print(arr[i]+" ");
         }
+
+
 
         sc.close();
     }
